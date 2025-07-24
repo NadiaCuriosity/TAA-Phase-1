@@ -41,9 +41,11 @@ export default function Dashboard() {
             <p className="text-xl lg:text-2xl font-light text-primary-dark/80 mb-6 max-w-3xl mx-auto">
               We'll build a reliable, frictionless system that tracks work without extra admin.
             </p>
-            <p className="text-xl lg:text-2xl font-semibold text-highlight-gold mb-8 max-w-3xl mx-auto">
-              Save $2400+ month on low value work
-            </p>
+            <div className="bg-white rounded-xl shadow-xl p-6 mb-8 max-w-2xl mx-auto border border-gray-100">
+              <p className="text-xl lg:text-2xl font-semibold text-highlight-gold">
+                Save $2400+ month on low value work
+              </p>
+            </div>
             <div className="flex justify-center space-x-4">
               <div className="bg-white rounded-lg px-6 py-3 shadow-lg">
                 <span className="text-sm text-primary-dark/60">Investment Required</span>
