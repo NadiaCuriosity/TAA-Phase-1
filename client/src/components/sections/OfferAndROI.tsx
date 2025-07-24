@@ -9,7 +9,7 @@ export default function OfferAndROI() {
       textColor: "text-highlight-gold"
     },
     {
-      day: "Week 8",
+      day: "wk 6-8",
       title: "Breakeven Point", 
       amount: "$0 Net Cost",
       description: "Net Cost",
