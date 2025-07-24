@@ -54,7 +54,7 @@ export default function StrategicRoadmap() {
                 </div>
               )}
               <div className="mb-6">
-                <div className={`text-2xl font-bold mb-3 font-corporate ${phase.isCurrent ? 'text-white' : 'text-primary-dark'}`}>
+                <div className="text-2xl font-bold mb-3 font-corporate text-[fff]">
                   Phase {phase.number}:
                 </div>
                 <div className={`text-lg font-semibold font-corporate ${phase.isCurrent ? 'text-white' : 'text-accent-green'}`}>
