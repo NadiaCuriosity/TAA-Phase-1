@@ -78,9 +78,13 @@ export default function FutureWorkflow() {
     A[Record Voice Note in Slack] --> B[Automated Processing]
     B --> C[Tasks Created in Scoro]
     
-    style A fill:#e1f5fe,stroke:#01579b
-    style B fill:#f3e5f5,stroke:#4a148c
-    style C fill:#e8f5e8,stroke:#1b5e20`}
+    %% Define styling classes for future workflow
+    classDef action fill:#145b51,stroke:#145b51,color:#ffffff;
+    classDef system fill:#f7f9f9,stroke:#06414f,stroke-width:2px;
+    
+    %% Apply classes
+    class A action;
+    class B,C system;`}
               </div>
             </div>
             

@@ -52,23 +52,25 @@ export default function CurrentWorkflow() {
               {`flowchart TD
     A[Client WIP Meeting] --> B[Meeting Recording]
     B --> C[Chat GPT Action Extraction]
-    C --> D[Manual Correction - PAIN POINT]
+    C --> D[Manual Correction<br/>PAIN POINT<br/>15-30 min/meeting]
     D --> E[Action List Created]
     E --> F[Send to Client]
     E --> G[Create Tasks in Scoro]
-    G --> H[Entry Bottleneck - PAIN POINT]
+    G --> H[Entry Bottleneck<br/>PAIN POINT<br/>Admin exceeds Task Time]
     H --> I[Task Size Classification]
-    I --> J[Micro Tasks Missed - PAIN POINT]
+    I --> J[Micro Tasks Missed<br/>PAIN POINT]
     I --> K[Standard Tasks Entered]
-    K --> L[Verbal Planning - PAIN POINT]
+    K --> L[Verbal Planning<br/>PAIN POINT<br/>No Central View]
     L --> M[Manual Scoro Update]
-    M --> N[Progress Tracking - PAIN POINT]
-    
-    style D fill:#fff2cc,stroke:#d6b656
-    style H fill:#fff2cc,stroke:#d6b656
-    style J fill:#fff2cc,stroke:#d6b656
-    style L fill:#fff2cc,stroke:#d6b656
-    style N fill:#fff2cc,stroke:#d6b656`}
+    M --> N[Progress Tracking<br/>PAIN POINT<br/>Knowledge in Notebooks]
+
+    %% Define pain point styling class
+    classDef pain fill:#ffe599,stroke:#bf8e29,stroke-width:3px;
+    classDef normal fill:#f7f9f9,stroke:#06414f,stroke-width:2px;
+
+    %% Apply classes to nodes
+    class D,H,J,L,N pain;
+    class A,B,C,E,F,G,I,K,M normal;`}
             </div>
           </div>
         </div>
