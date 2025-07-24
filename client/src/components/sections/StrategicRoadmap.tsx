@@ -65,7 +65,7 @@ export default function StrategicRoadmap() {
                 {phase.description}
               </div>
               <div className={`mt-auto pt-4 ${phase.isCurrent ? 'border-t border-white/20' : 'border-t border-primary-dark/10'}`}>
-                <div className={`font-semibold font-corporate ${phase.isCurrent ? 'text-white' : 'text-primary-dark'}`}>
+                <div className="font-semibold font-corporate text-[fff]">
                   {phase.investment}
                 </div>
               </div>
