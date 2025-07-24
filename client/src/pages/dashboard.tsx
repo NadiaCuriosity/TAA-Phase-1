@@ -39,8 +39,9 @@ export default function Dashboard() {
               TAA - Phase 1 AI Optimisation Proposal
             </h1>
             <p className="text-xl lg:text-2xl font-light text-primary-dark/80 mb-8 max-w-3xl mx-auto">
-              Transform your workflow inefficiencies into streamlined automation. 
-              <span className="font-semibold text-highlight-gold"> Save $2,400+ monthly</span> with our proven solution.
+               We'll build a reliable, frictionless system that tracks work without extra admin. Stop tasks falling through the cracks, leverage the project management system you’re paying for, and gain visibility into what’s happening across the business
+            
+              <span className="font-semibold text-highlight-gold">Save $2400+ of wasted hours</span>
             </p>
             <div className="flex justify-center space-x-4">
               <div className="bg-white rounded-lg px-6 py-3 shadow-lg">
