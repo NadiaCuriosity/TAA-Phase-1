@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Dashboard from "@/pages/dashboard";
 import NotFound from "@/pages/not-found";
 
-function RouterComponent() {
+function AppRouter() {
   return (
     <Router hook={useHashLocation}>
       <Switch>
@@ -23,7 +23,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <RouterComponent />
+        <AppRouter />
       </TooltipProvider>
     </QueryClientProvider>
   );
