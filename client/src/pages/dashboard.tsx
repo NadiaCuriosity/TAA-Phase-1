@@ -6,6 +6,7 @@ import CostCalculator from '../components/sections/CostCalculator';
 import FutureWorkflow from '../components/sections/FutureWorkflow';
 import OfferAndROI from '../components/sections/OfferAndROI';
 import StrategicRoadmap from '../components/sections/StrategicRoadmap';
+import logoPath from '@assets/1_1753326712954.png';
 
 export default function Dashboard() {
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function Dashboard() {
             {/* Logo */}
             <div className="flex justify-center">
               <img 
-                src="/attached_assets/1_1753326712954.png" 
+                src={logoPath} 
                 alt="Curiosity - Helping Good Humans with AI" 
                 className="h-16 md:h-20 opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
