@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import mermaid from "mermaid";
 import Navigation from "@/components/Navigation";
 import CurrentWorkflow from "@/components/sections/CurrentWorkflow";
 import CostCalculator from "@/components/sections/CostCalculator";
@@ -9,22 +10,20 @@ import StrategicRoadmap from "@/components/sections/StrategicRoadmap";
 export default function Dashboard() {
   useEffect(() => {
     // Initialize Mermaid after component mounts
-    if (typeof window !== 'undefined' && window.mermaid) {
-      window.mermaid.initialize({
-        startOnLoad: true,
-        theme: 'base',
-        themeVariables: {
-          fontFamily: 'Poppins, sans-serif',
-          fontSize: '14px',
-          primaryColor: '#F7F9F9',
-          primaryTextColor: '#06414F',
-          primaryBorderColor: '#06414F',
-          lineColor: '#06414F',
-          secondaryColor: '#145B51',
-          tertiaryColor: '#BF8E29'
-        }
-      });
-    }
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Poppins, sans-serif',
+        fontSize: '14px',
+        primaryColor: '#F7F9F9',
+        primaryTextColor: '#06414F',
+        primaryBorderColor: '#06414F',
+        lineColor: '#06414F',
+        secondaryColor: '#145B51',
+        tertiaryColor: '#BF8E29'
+      }
+    });
   }, []);
 
   return (

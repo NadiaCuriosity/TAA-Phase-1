@@ -1,13 +1,12 @@
 import { useEffect } from "react";
+import mermaid from "mermaid";
 
 export default function FutureWorkflow() {
   useEffect(() => {
     // Re-initialize Mermaid when component mounts
-    if (typeof window !== 'undefined' && window.mermaid) {
-      setTimeout(() => {
-        window.mermaid.run();
-      }, 100);
-    }
+    setTimeout(() => {
+      mermaid.run();
+    }, 100);
   }, []);
 
   const staysTheSame = [
@@ -75,17 +74,17 @@ export default function FutureWorkflow() {
             </h3>
             
             <div className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6">
-              <div className="mermaid" id="future-workflow-diagram">
-                {`graph TD
-                    classDef action fill:#145B51,stroke:#145B51,color:#fff
-                    classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
+              <pre className="mermaid" id="future-workflow-diagram">
+{`graph TD
+    classDef action fill:#145B51,stroke:#145B51,color:#fff
+    classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
 
-                    A["Record a Quick Voice Note in Slack"] --> B["AI Automation Magic"];
-                    B --> C["Tasks Instantly Created in Scoro"];
+    A["Record a Quick Voice Note in Slack"] --> B["AI Automation Magic"];
+    B --> C["Tasks Instantly Created in Scoro"];
 
-                    class A action;
-                    class B,C system;`}
-              </div>
+    class A action;
+    class B,C system;`}
+              </pre>
             </div>
             
             <div className="space-y-3 text-sm text-primary-dark/70">
