@@ -36,7 +36,8 @@ export default function Dashboard() {
         <section className="gradient-bg py-16 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-primary-dark mb-6">
-              TAA - Phase 1 AI Optimisation Proposal
+              TAA - Phase 1<br />
+              AI Optimisation Proposal
             </h1>
             <p className="text-xl lg:text-2xl font-light text-primary-dark/80 mb-8 max-w-3xl mx-auto">
                We'll build a reliable, frictionless system that tracks work without extra admin. Stop tasks falling through the cracks, leverage the project management system you’re paying for, and gain visibility into what’s happening across the business
