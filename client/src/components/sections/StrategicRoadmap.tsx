@@ -42,7 +42,7 @@ export default function StrategicRoadmap() {
         
         <div className="grid lg:grid-cols-3 gap-8">
           {phases.map((phase) => (
-            <div key={phase.number} className={`roadmap-phase ${phase.bgClass} rounded-2xl p-8 relative overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-1 border ${phase.isCurrent ? 'border-highlight-gold/20' : 'border-gray-100'} shadow-lg`}>
+            <div key={phase.number} className="roadmap-phase from-highlight-gold to-yellow-600 text-white rounded-2xl p-8 relative overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-1 border border-highlight-gold/20 shadow-lg bg-[#06414F]">
               {phase.isCurrent && (
                 <div className="absolute top-0 right-0 bg-white text-highlight-gold px-4 py-2 rounded-bl-lg text-sm font-semibold font-corporate">
                   {phase.status}
