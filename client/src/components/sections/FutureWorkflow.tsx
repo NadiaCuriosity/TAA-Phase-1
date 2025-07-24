@@ -1,12 +1,29 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import mermaid from "mermaid";
 
 export default function FutureWorkflow() {
+  const futureContainerRef = useRef<HTMLDivElement>(null);
+
+  const diagram = `
+    flowchart TD
+      A[Record Voice Note in Slack] --> B[Automated Processing]
+      B --> C[Tasks Created in Scoro]
+      
+      %% Styling
+      classDef action fill:#145b51,stroke:#145b51,color:#ffffff;
+      classDef system fill:#f7f9f9,stroke:#06414f,stroke-width:2px;
+      class A action;
+      class B,C system;
+  `;
+
   useEffect(() => {
-    // Re-initialize Mermaid when component mounts
-    setTimeout(() => {
-      mermaid.run();
-    }, 100);
+    if (!futureContainerRef.current) return;
+    mermaid.initialize({ startOnLoad: false });
+    mermaid.render("future-workflow", diagram).then(({ svg }) => {
+      if (futureContainerRef.current) {
+        futureContainerRef.current.innerHTML = svg;
+      }
+    });
   }, []);
 
   const staysTheSame = [
@@ -72,21 +89,10 @@ export default function FutureWorkflow() {
               The New Frictionless Step
             </h3>
             
-            <div className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6">
-              <div className="mermaid" id="future-workflow-diagram">
-                {`flowchart TD
-    A[Record Voice Note in Slack] --> B[Automated Processing]
-    B --> C[Tasks Created in Scoro]
-    
-    %% Define styling classes for future workflow
-    classDef action fill:#145b51,stroke:#145b51,color:#ffffff;
-    classDef system fill:#f7f9f9,stroke:#06414f,stroke-width:2px;
-    
-    %% Apply classes
-    class A action;
-    class B,C system;`}
-              </div>
-            </div>
+            <div
+              ref={futureContainerRef}
+              className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6"
+            />
             
             <div className="space-y-3 text-sm text-primary-dark/70">
               {improvements.map((improvement, index) => (
