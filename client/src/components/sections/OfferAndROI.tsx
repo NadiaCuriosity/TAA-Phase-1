@@ -47,7 +47,7 @@ export default function OfferAndROI() {
             <div className="text-lg text-primary-dark font-corporate">Standard Investment</div>
           </div>
           
-          <div className="bg-gradient-to-br from-highlight-gold to-amber-600 rounded-2xl shadow-xl p-10 text-center text-white relative transform scale-105">
+          <div className="from-highlight-gold to-amber-600 rounded-2xl shadow-xl p-10 text-center text-white relative transform scale-105 bg-[#bf8e29]">
             <div className="absolute top-4 right-4 bg-white text-highlight-gold px-4 py-2 rounded-full text-sm font-semibold font-corporate">
               Your Price
             </div>
