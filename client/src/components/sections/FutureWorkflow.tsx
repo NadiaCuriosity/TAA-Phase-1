@@ -73,17 +73,15 @@ export default function FutureWorkflow() {
             </h3>
             
             <div className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6">
-              <pre className="mermaid" id="future-workflow-diagram">
-{`flowchart TD
-    classDef action fill:#145B51,stroke:#145B51,color:#fff
-    classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
-
+              <div className="mermaid" id="future-workflow-diagram">
+                {`flowchart TD
     A[Record Voice Note in Slack] --> B[Automated Processing]
     B --> C[Tasks Created in Scoro]
-
-    class A action
-    class B,C system`}
-              </pre>
+    
+    style A fill:#e1f5fe,stroke:#01579b
+    style B fill:#f3e5f5,stroke:#4a148c
+    style C fill:#e8f5e8,stroke:#1b5e20`}
+              </div>
             </div>
             
             <div className="space-y-3 text-sm text-primary-dark/70">
