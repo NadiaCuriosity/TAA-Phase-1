@@ -18,13 +18,39 @@ export default function FutureWorkflow() {
 
   useEffect(() => {
     if (!futureContainerRef.current) return;
-    mermaid.initialize({ startOnLoad: false });
-    mermaid.render("future-workflow", diagram).then(({ svg }) => {
-      if (futureContainerRef.current) {
-        futureContainerRef.current.innerHTML = svg;
+    
+    const renderDiagram = async () => {
+      try {
+        mermaid.initialize({ 
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '14px',
+            primaryColor: '#F7F9F9',
+            primaryTextColor: '#06414F',
+            primaryBorderColor: '#06414F',
+            lineColor: '#06414F',
+            secondaryColor: '#145B51',
+            tertiaryColor: '#BF8E29'
+          }
+        });
+        
+        const { svg } = await mermaid.render("future-workflow", diagram);
+        if (futureContainerRef.current) {
+          futureContainerRef.current.innerHTML = svg;
+        }
+      } catch (error) {
+        console.error('Future workflow diagram error:', error);
+        // Fallback: show a simple text version
+        if (futureContainerRef.current) {
+          futureContainerRef.current.innerHTML = '<p class="text-center text-gray-500">Workflow diagram loading...</p>';
+        }
       }
-    });
-  }, []);
+    };
+
+    renderDiagram();
+  }, [diagram]);
 
   const staysTheSame = [
     {

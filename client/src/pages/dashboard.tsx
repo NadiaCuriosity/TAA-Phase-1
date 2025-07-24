@@ -9,41 +9,6 @@ import StrategicRoadmap from '../components/sections/StrategicRoadmap';
 import logoPath from '@assets/1_1753326712954.png';
 
 export default function Dashboard() {
-  useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: 'base',
-      themeVariables: {
-        fontFamily: 'Poppins, sans-serif',
-        fontSize: '14px',
-        primaryColor: '#F7F9F9',
-        primaryTextColor: '#06414F',
-        primaryBorderColor: '#06414F',
-        lineColor: '#06414F',
-        secondaryColor: '#145B51',
-        tertiaryColor: '#BF8E29'
-      }
-    });
-
-    // Force render all mermaid diagrams after a short delay
-    const renderDiagrams = async () => {
-      try {
-        const diagrams = document.querySelectorAll('.mermaid');
-        for (let i = 0; i < diagrams.length; i++) {
-          const diagram = diagrams[i] as HTMLElement;
-          if (diagram.textContent && diagram.textContent.trim()) {
-            const { svg } = await mermaid.render(`diagram-${i}`, diagram.textContent);
-            diagram.innerHTML = svg;
-          }
-        }
-      } catch (error) {
-        console.error('Mermaid rendering error:', error);
-      }
-    };
-
-    // Render after a short delay to ensure DOM is ready
-    setTimeout(renderDiagrams, 100);
-  }, []);
 
   return (
     <div className="font-poppins bg-background-light text-primary-dark">

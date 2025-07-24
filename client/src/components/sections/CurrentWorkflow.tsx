@@ -29,13 +29,39 @@ export default function CurrentWorkflow() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    mermaid.initialize({ startOnLoad: false });
-    mermaid.render("current-workflow", diagram).then(({ svg }) => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = svg;
+    
+    const renderDiagram = async () => {
+      try {
+        mermaid.initialize({ 
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '14px',
+            primaryColor: '#F7F9F9',
+            primaryTextColor: '#06414F',
+            primaryBorderColor: '#06414F',
+            lineColor: '#06414F',
+            secondaryColor: '#145B51',
+            tertiaryColor: '#BF8E29'
+          }
+        });
+        
+        const { svg } = await mermaid.render("current-workflow", diagram);
+        if (containerRef.current) {
+          containerRef.current.innerHTML = svg;
+        }
+      } catch (error) {
+        console.error('Current workflow diagram error:', error);
+        // Fallback: show a simple text version
+        if (containerRef.current) {
+          containerRef.current.innerHTML = '<p class="text-center text-gray-500">Workflow diagram loading...</p>';
+        }
       }
-    });
-  }, []);
+    };
+
+    renderDiagram();
+  }, [diagram]);
 
   const painPoints = [
     "Manual correction taking 15-30 minutes per meeting",
