@@ -53,22 +53,22 @@ export default function CurrentWorkflow() {
     classDef normal fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
     classDef pain fill:#fff,stroke:#BF8E29,stroke-width:4px,color:#06414F
 
-    A["Client WIP Meeting"] --> B["Meeting Recording"];
-    B --> C["Chat GPT Action Extraction"];
-    C --> D(Manual Correction<br/><b>PAIN POINT</b><br/>15-30 min/meeting);
-    D --> E["Action List Created"];
-    E --> F["Send to Client"];
-    E --> G["Create Tasks in Scoro"];
-    G --> H(Entry Bottleneck<br/><b>PAIN POINT</b><br/>Admin > Task Time);
-    H --> I["Task Size Classification"];
-    I --> J(Micro Tasks Missed<br/><b>PAIN POINT</b>);
-    I --> K["Standard Tasks Entered"];
-    K --> L(Verbal Planning<br/><b>PAIN POINT</b><br/>No Central View);
-    L --> M["Manual Scoro Update"];
-    M --> N(Progress Tracking<br/><b>PAIN POINT</b><br/>Knowledge in Notebooks);
+    A["Client WIP Meeting"] --> B["Meeting Recording"]
+    B --> C["Chat GPT Action Extraction"]
+    C --> D("Manual Correction<br/><b>PAIN POINT</b><br/>15-30 min/meeting")
+    D --> E["Action List Created"]
+    E --> F["Send to Client"]
+    E --> G["Create Tasks in Scoro"]
+    G --> H("Entry Bottleneck<br/><b>PAIN POINT</b><br/>Admin > Task Time")
+    H --> I["Task Size Classification"]
+    I --> J("Micro Tasks Missed<br/><b>PAIN POINT</b>")
+    I --> K["Standard Tasks Entered"]
+    K --> L("Verbal Planning<br/><b>PAIN POINT</b><br/>No Central View")
+    L --> M["Manual Scoro Update"]
+    M --> N("Progress Tracking<br/><b>PAIN POINT</b><br/>Knowledge in Notebooks")
 
-    class D,H,J,L,N pain;
-    class A,B,C,E,F,G,I,K,M normal;`}
+    class D,H,J,L,N pain
+    class A,B,C,E,F,G,I,K,M normal`}
             </pre>
           </div>
         </div>

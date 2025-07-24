@@ -78,11 +78,11 @@ export default function FutureWorkflow() {
     classDef action fill:#145B51,stroke:#145B51,color:#fff
     classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
 
-    A["Record Voice Note in Slack"] --> B["Automated Processing"];
-    B --> C["Tasks Created in Scoro"];
+    A["Record Voice Note in Slack"] --> B["Automated Processing"]
+    B --> C["Tasks Created in Scoro"]
 
-    class A action;
-    class B,C system;`}
+    class A action
+    class B,C system`}
               </pre>
             </div>
             
