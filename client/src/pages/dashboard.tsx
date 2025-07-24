@@ -59,9 +59,18 @@ export default function Dashboard() {
         {/* Bottom Summary Section */}
         <section className="py-16 px-6 bg-gradient-to-r from-accent-green/5 to-highlight-gold/5 border-t border-gray-100">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl lg:text-2xl font-light text-primary-dark leading-relaxed font-corporate">
+            <p className="text-xl lg:text-2xl font-light text-primary-dark leading-relaxed font-corporate mb-12">
               This phase creates a system that captures and tracks work seamlessly... no extra admin, no dropped tasks, and proper utilisation of the tools you're already investing in. Most importantly, it establishes visibility across your business and sets the habits that supports everything that follows.
             </p>
+            
+            {/* Logo */}
+            <div className="flex justify-center">
+              <img 
+                src="/attached_assets/1_1753326712954.png" 
+                alt="Curiosity - Helping Good Humans with AI" 
+                className="h-16 md:h-20 opacity-90 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
           </div>
         </section>
 
