@@ -63,9 +63,9 @@ export default function CostCalculator() {
           </div>
           
           <div className="flex justify-center mb-8">
-            <div className="bg-gradient-to-br from-highlight-gold to-amber-600 rounded-xl p-10 text-white text-center shadow-lg max-w-sm">
-              <div className="text-sm font-medium opacity-95 mb-3 font-corporate uppercase tracking-wide">Annual Cost</div>
-              <div className="text-4xl lg:text-5xl font-bold font-corporate">${calculations.annual.toLocaleString()}</div>
+            <div className="bg-white border-2 border-highlight-gold rounded-xl p-10 text-center shadow-lg max-w-sm">
+              <div className="text-sm font-medium mb-3 font-corporate uppercase tracking-wide text-primary-dark">Annual Cost</div>
+              <div className="text-4xl lg:text-5xl font-bold font-corporate text-highlight-gold">${calculations.annual.toLocaleString()}</div>
             </div>
           </div>
           
