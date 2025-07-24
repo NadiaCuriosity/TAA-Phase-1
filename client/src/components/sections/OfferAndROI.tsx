@@ -1,0 +1,106 @@
+export default function OfferAndROI() {
+  const timelinePoints = [
+    {
+      day: "Day 1",
+      title: "Initial Investment",
+      amount: "$3,500",
+      description: "Project kickoff and setup",
+      bgColor: "bg-primary-dark",
+      textColor: "text-highlight-gold"
+    },
+    {
+      day: "Week 6",
+      title: "BREAKEVEN POINT",
+      amount: "$0 Net Cost",
+      description: "Savings cover investment",
+      bgColor: "bg-accent-green pulse-gold",
+      textColor: "text-accent-green"
+    },
+    {
+      day: "∞",
+      title: "Ongoing Savings",
+      amount: "$2,400+/month",
+      description: "Pure profit every month",
+      bgColor: "bg-highlight-gold",
+      textColor: "text-accent-green"
+    }
+  ];
+
+  return (
+    <section id="offer-roi" className="py-16 px-6 bg-background-light">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-4">Your Foundational Partner Offer</h2>
+          <p className="text-lg text-primary-dark/70 max-w-2xl mx-auto">
+            We're offering you a special foundational partner rate. 
+            Here's the investment and your rapid return timeline.
+          </p>
+        </div>
+        
+        {/* Pricing Comparison */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center relative opacity-75">
+            <div className="absolute top-4 right-4 bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+              Standard Rate
+            </div>
+            <div className="text-4xl font-bold text-primary-dark mb-2 line-through">$5,000</div>
+            <div className="text-lg text-primary-dark/70">Regular Investment</div>
+            <div className="mt-6 text-sm text-primary-dark/60">
+              Our standard rate for workflow automation projects
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-accent-green to-primary-dark rounded-2xl shadow-xl p-8 text-center text-white relative transform scale-105">
+            <div className="absolute top-4 right-4 bg-highlight-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Partner Rate
+            </div>
+            <div className="text-5xl font-bold mb-2">$3,500</div>
+            <div className="text-lg opacity-90">Foundational Partner Investment</div>
+            <div className="mt-6 text-sm opacity-80">
+              30% discount for being our foundational partner
+            </div>
+            <div className="mt-4 bg-white/20 rounded-lg p-3">
+              <div className="text-highlight-gold font-semibold">You Save: $1,500</div>
+            </div>
+          </div>
+        </div>
+        
+        {/* ROI Timeline */}
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h3 className="text-2xl font-semibold text-center text-primary-dark mb-8">Your ROI Timeline</h3>
+          
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 timeline-connector rounded-full transform -translate-y-1/2"></div>
+            
+            {/* Timeline Points */}
+            <div className="grid md:grid-cols-3 gap-8 relative z-10">
+              {timelinePoints.map((point, index) => (
+                <div key={index} className="text-center">
+                  <div className={`w-16 h-16 ${point.bgColor} rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4`}>
+                    {point.day === "∞" ? <i className="fas fa-infinity"></i> : point.day}
+                  </div>
+                  <div className={`${point.bgColor.includes('primary') ? 'bg-primary-dark/5' : point.bgColor.includes('accent') ? 'bg-accent-green/5' : 'bg-highlight-gold/5'} rounded-lg p-4`}>
+                    <div className={`font-semibold ${point.textColor === 'text-accent-green' && point.title === 'BREAKEVEN POINT' ? 'text-accent-green text-lg' : point.textColor === 'text-highlight-gold' ? 'text-highlight-gold' : 'text-primary-dark'}`}>
+                      {point.title}
+                    </div>
+                    <div className={`text-2xl font-bold ${point.textColor}`}>{point.amount}</div>
+                    <div className="text-sm text-primary-dark/70 mt-2">{point.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center p-4 bg-accent-green/10 rounded-lg">
+            <p className="text-primary-dark">
+              <i className="fas fa-chart-line text-accent-green mr-2"></i>
+              <span className="font-semibold">12-month ROI:</span> 
+              <span className="text-2xl font-bold text-highlight-gold"> 685%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

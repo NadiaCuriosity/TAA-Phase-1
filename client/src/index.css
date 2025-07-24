@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(180, 20%, 98%);
+  --foreground: hsl(195, 87%, 16%);
+  --muted: hsl(180, 10%, 95%);
+  --muted-foreground: hsl(195, 20%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(195, 87%, 16%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(195, 87%, 16%);
+  --border: hsl(195, 20%, 85%);
+  --input: hsl(195, 20%, 85%);
+  --primary: hsl(156, 61%, 18%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(180, 10%, 95%);
+  --secondary-foreground: hsl(195, 87%, 16%);
+  --accent: hsl(180, 10%, 95%);
+  --accent-foreground: hsl(195, 87%, 16%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(195, 87%, 16%);
+  --radius: 0.5rem;
+  
+  /* Custom colors from design */
+  --primary-dark: hsl(195, 87%, 16%);
+  --accent-green: hsl(156, 61%, 18%);
+  --highlight-gold: hsl(39, 63%, 46%);
+  --background-light: hsl(180, 20%, 98%);
+}
+
+.dark {
+  --background: hsl(195, 87%, 3%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(195, 20%, 15%);
+  --muted-foreground: hsl(195, 10%, 65%);
+  --popover: hsl(195, 87%, 3%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(195, 87%, 3%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(195, 20%, 15%);
+  --input: hsl(195, 20%, 15%);
+  --primary: hsl(156, 61%, 18%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(195, 20%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(195, 20%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(195, 10%, 84%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-primary-dark {
+    color: hsl(195, 87%, 16%);
+  }
+  
+  .text-accent-green {
+    color: hsl(156, 61%, 18%);
+  }
+  
+  .text-highlight-gold {
+    color: hsl(39, 63%, 46%);
+  }
+  
+  .bg-primary-dark {
+    background-color: hsl(195, 87%, 16%);
+  }
+  
+  .bg-accent-green {
+    background-color: hsl(156, 61%, 18%);
+  }
+  
+  .bg-highlight-gold {
+    background-color: hsl(39, 63%, 46%);
+  }
+  
+  .bg-background-light {
+    background-color: hsl(180, 20%, 98%);
+  }
+  
+  .border-primary-dark {
+    border-color: hsl(195, 87%, 16%);
+  }
+  
+  .border-accent-green {
+    border-color: hsl(156, 61%, 18%);
+  }
+  
+  .border-highlight-gold {
+    border-color: hsl(39, 63%, 46%);
+  }
+  
+  .pulse-gold {
+    animation: pulse-gold 2s infinite;
+  }
+  
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(191, 142, 41, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(191, 142, 41, 0); }
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(180, 20%, 98%) 0%, hsl(195, 30%, 95%) 100%);
+  }
+  
+  .timeline-connector {
+    background: linear-gradient(90deg, hsl(156, 61%, 18%) 0%, hsl(39, 63%, 46%) 50%, hsl(156, 61%, 18%) 100%);
+  }
+}
+
+.mermaid {
+  font-family: 'Poppins', sans-serif !important;
+}

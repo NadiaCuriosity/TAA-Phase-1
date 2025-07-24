@@ -1,0 +1,104 @@
+import { useEffect } from "react";
+
+export default function FutureWorkflow() {
+  useEffect(() => {
+    // Re-initialize Mermaid when component mounts
+    if (typeof window !== 'undefined' && window.mermaid) {
+      setTimeout(() => {
+        window.mermaid.run();
+      }, 100);
+    }
+  }, []);
+
+  const staysTheSame = [
+    {
+      icon: "fas fa-users",
+      title: "Meeting Process",
+      description: "Your client meetings continue exactly as they are"
+    },
+    {
+      icon: "fas fa-file-alt",
+      title: "Meeting Summaries",
+      description: "AI-generated summaries remain high quality"
+    },
+    {
+      icon: "fas fa-database",
+      title: "Scoro as Truth",
+      description: "Scoro remains your single source of truth"
+    }
+  ];
+
+  const improvements = [
+    "No more manual correction sessions",
+    "No more entry bottlenecks",
+    "Micro tasks automatically captured",
+    "Central planning view in Scoro"
+  ];
+
+  return (
+    <section id="future-workflow" className="py-16 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-4">The Future Workflow</h2>
+          <p className="text-lg text-primary-dark/70 max-w-2xl mx-auto">
+            Here's how we'll transform your workflow into a frictionless, automated system 
+            while keeping what already works well.
+          </p>
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* What Stays the Same */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-primary-dark mb-6 flex items-center">
+              <i className="fas fa-check-circle text-accent-green mr-3"></i>
+              What Stays the Same
+            </h3>
+            
+            <div className="space-y-4">
+              {staysTheSame.map((item, index) => (
+                <div key={index} className="flex items-center p-4 bg-background-light rounded-lg">
+                  <i className={`${item.icon} text-accent-green text-xl mr-4`}></i>
+                  <div>
+                    <div className="font-semibold text-primary-dark">{item.title}</div>
+                    <div className="text-sm text-primary-dark/70">{item.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* The New Frictionless Step */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-primary-dark mb-6 flex items-center">
+              <i className="fas fa-magic text-highlight-gold mr-3"></i>
+              The New Frictionless Step
+            </h3>
+            
+            <div className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6">
+              <div className="mermaid" id="future-workflow-diagram">
+                {`graph TD
+                    classDef action fill:#145B51,stroke:#145B51,color:#fff
+                    classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
+
+                    A["Record a Quick Voice Note in Slack"] --> B["AI Automation Magic"];
+                    B --> C["Tasks Instantly Created in Scoro"];
+
+                    class A action;
+                    class B,C system;`}
+              </div>
+            </div>
+            
+            <div className="space-y-3 text-sm text-primary-dark/70">
+              {improvements.map((improvement, index) => (
+                <div key={index} className="flex items-center">
+                  <span className="w-2 h-2 bg-accent-green rounded-full mr-3"></span>
+                  {improvement}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
