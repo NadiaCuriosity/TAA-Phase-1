@@ -12,13 +12,13 @@ export default function CostCalculator() {
 
   useEffect(() => {
     const weeklyCost = adminHours * hourlyRate;
-    const annualCost = weeklyCost * 52;
+    const annualCost = weeklyCost * 48; // Changed to 48 weeks per year
     const monthlyCost = annualCost / 12;
     const paybackWeeks = Math.ceil(3500 / weeklyCost);
 
     setCalculations({
       weekly: weeklyCost,
-      monthly: monthlyCost,
+      monthly: Math.round(monthlyCost),
       annual: annualCost,
       paybackWeeks: paybackWeeks
     });
@@ -62,10 +62,14 @@ export default function CostCalculator() {
             </div>
           </div>
           
-          <div className="flex justify-center mb-8">
-            <div className="bg-white border-2 border-highlight-gold rounded-xl p-10 text-center shadow-lg max-w-sm">
-              <div className="text-sm font-medium mb-3 font-corporate uppercase tracking-wide text-primary-dark">Annual Cost</div>
-              <div className="text-4xl lg:text-5xl font-bold font-corporate text-highlight-gold">${calculations.annual.toLocaleString()}</div>
+          <div className="flex justify-center gap-6 mb-8">
+            <div className="bg-white border-2 border-highlight-gold rounded-xl p-8 text-center shadow-lg max-w-sm">
+              <div className="text-sm font-medium mb-3 font-corporate uppercase tracking-wide text-primary-dark">Monthly Cost</div>
+              <div className="text-3xl lg:text-4xl font-bold font-corporate text-highlight-gold">${calculations.monthly.toLocaleString()}</div>
+            </div>
+            <div className="bg-white border-2 border-highlight-gold rounded-xl p-8 text-center shadow-lg max-w-sm">
+              <div className="text-sm font-medium mb-3 font-corporate uppercase tracking-wide text-primary-dark">Annual Cost (48 weeks)</div>
+              <div className="text-3xl lg:text-4xl font-bold font-corporate text-highlight-gold">${calculations.annual.toLocaleString()}</div>
             </div>
           </div>
           
