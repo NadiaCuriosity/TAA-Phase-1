@@ -21,26 +21,26 @@ export default function CurrentWorkflow() {
     <section id="current-workflow" className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-4">The Current Workflow</h2>
-          <p className="text-lg text-primary-dark/70 max-w-2xl mx-auto">
-            Your current process has multiple pain points that are costing you time and money. 
-            Let's visualize where the inefficiencies lie.
+          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-6 font-corporate">The Current Workflow</h2>
+          <p className="text-lg text-primary-dark font-corporate max-w-2xl mx-auto leading-relaxed">
+            Your current process contains multiple bottlenecks that impact operational efficiency. 
+            This analysis identifies key areas for improvement.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
-            <div className="bg-background-light rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-primary-dark mb-4">
+            <div className="bg-background-light rounded-xl p-8 shadow-sm border border-gray-100">
+              <h3 className="text-xl font-semibold text-primary-dark mb-6 font-corporate">
                 Key Bottleneck Points
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {painPoints.map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="bg-highlight-gold text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
+                    <span className="bg-highlight-gold text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold mr-4 mt-0.5 shadow-sm">
                       {index + 1}
                     </span>
-                    <span>{point}</span>
+                    <span className="text-primary-dark font-corporate leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>

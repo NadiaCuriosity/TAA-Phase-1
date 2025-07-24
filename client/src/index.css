@@ -24,11 +24,11 @@
   --ring: hsl(195, 87%, 16%);
   --radius: 0.5rem;
   
-  /* Custom colors from design */
-  --primary-dark: hsl(195, 87%, 16%);
-  --accent-green: hsl(156, 61%, 18%);
-  --highlight-gold: hsl(39, 63%, 46%);
-  --background-light: hsl(180, 20%, 98%);
+  /* Custom colors from design - Enhanced contrast */
+  --primary-dark: hsl(195, 87%, 12%);
+  --accent-green: hsl(156, 61%, 15%);
+  --highlight-gold: hsl(39, 63%, 40%);
+  --background-light: hsl(180, 20%, 99%);
 }
 
 .dark {
@@ -62,52 +62,65 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
   }
   
   html {
     scroll-behavior: smooth;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  
+  .font-corporate {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
 }
 
 @layer utilities {
   .text-primary-dark {
-    color: hsl(195, 87%, 16%);
+    color: hsl(195, 87%, 12%);
   }
   
   .text-accent-green {
-    color: hsl(156, 61%, 18%);
+    color: hsl(156, 61%, 15%);
   }
   
   .text-highlight-gold {
-    color: hsl(39, 63%, 46%);
+    color: hsl(39, 63%, 40%);
   }
   
   .bg-primary-dark {
-    background-color: hsl(195, 87%, 16%);
+    background-color: hsl(195, 87%, 12%);
   }
   
   .bg-accent-green {
-    background-color: hsl(156, 61%, 18%);
+    background-color: hsl(156, 61%, 15%);
   }
   
   .bg-highlight-gold {
-    background-color: hsl(39, 63%, 46%);
+    background-color: hsl(39, 63%, 40%);
   }
   
   .bg-background-light {
-    background-color: hsl(180, 20%, 98%);
+    background-color: hsl(180, 20%, 99%);
   }
   
   .border-primary-dark {
-    border-color: hsl(195, 87%, 16%);
+    border-color: hsl(195, 87%, 12%);
   }
   
   .border-accent-green {
-    border-color: hsl(156, 61%, 18%);
+    border-color: hsl(156, 61%, 15%);
   }
   
   .border-highlight-gold {
-    border-color: hsl(39, 63%, 46%);
+    border-color: hsl(39, 63%, 40%);
   }
   
   .pulse-gold {
@@ -130,4 +143,33 @@
 
 .mermaid {
   font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  stroke-width: 2px !important;
+}
+
+.mermaid .node .label {
+  color: #06414F !important;
+  font-weight: 500 !important;
+}
+
+/* Accessibility improvements */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #BF8E29 !important;
+  outline-offset: 2px !important;
+}
+
+/* Enhanced shadows for depth */
+.shadow-corporate {
+  box-shadow: 0 4px 6px -1px rgba(6, 65, 79, 0.1), 0 2px 4px -1px rgba(6, 65, 79, 0.06);
+}
+
+.shadow-corporate-lg {
+  box-shadow: 0 10px 15px -3px rgba(6, 65, 79, 0.1), 0 4px 6px -2px rgba(6, 65, 79, 0.05);
 }

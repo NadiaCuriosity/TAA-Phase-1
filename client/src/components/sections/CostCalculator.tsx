@@ -28,51 +28,51 @@ export default function CostCalculator() {
     <section id="cost-calculator" className="py-16 px-6 bg-background-light">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-4">The Hidden Cost of Inaction</h2>
-          <p className="text-lg text-primary-dark/70 max-w-2xl mx-auto">
-            Calculate exactly how much your current inefficiencies are costing you. 
-            Adjust the numbers below to see your real financial impact.
+          <h2 className="text-3xl lg:text-5xl font-bold text-accent-green mb-6 font-corporate">The Hidden Cost of Inaction</h2>
+          <p className="text-lg text-primary-dark font-corporate max-w-2xl mx-auto leading-relaxed">
+            Calculate the financial impact of current inefficiencies. 
+            Adjust the parameters below to see your specific cost analysis.
           </p>
         </div>
         
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+          <div className="grid md:grid-cols-2 gap-10 mb-10">
             <div className="space-y-4">
-              <label className="block text-sm font-semibold text-primary-dark">Team's Weekly Admin Hours</label>
+              <label className="block text-sm font-semibold text-primary-dark font-corporate">Weekly Admin Hours</label>
               <input 
                 type="number" 
                 value={adminHours}
                 onChange={(e) => setAdminHours(Number(e.target.value))}
                 min="1" 
                 max="100"
-                className="w-full px-4 py-3 border-2 border-primary-dark/20 rounded-lg text-xl font-semibold text-center focus:border-highlight-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-highlight-gold/30"
+                className="w-full px-6 py-4 border-2 border-primary-dark/20 rounded-lg text-xl font-semibold text-center focus:border-highlight-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-highlight-gold/20 font-corporate"
               />
             </div>
             
             <div className="space-y-4">
-              <label className="block text-sm font-semibold text-primary-dark">Average Hourly Rate ($NZD)</label>
+              <label className="block text-sm font-semibold text-primary-dark font-corporate">Average Hourly Rate ($NZD)</label>
               <input 
                 type="number" 
                 value={hourlyRate}
                 onChange={(e) => setHourlyRate(Number(e.target.value))}
                 min="1" 
                 max="500"
-                className="w-full px-4 py-3 border-2 border-primary-dark/20 rounded-lg text-xl font-semibold text-center focus:border-highlight-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-highlight-gold/30"
+                className="w-full px-6 py-4 border-2 border-primary-dark/20 rounded-lg text-xl font-semibold text-center focus:border-highlight-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-highlight-gold/20 font-corporate"
               />
             </div>
           </div>
           
-          <div className="flex justify-center">
-            <div className="bg-gradient-to-br from-highlight-gold to-yellow-600 rounded-xl p-8 text-white text-center pulse-gold max-w-xs">
-              <div className="text-sm font-medium opacity-90 mb-2">Annual Cost</div>
-              <div className="text-3xl lg:text-4xl font-bold">${calculations.annual.toLocaleString()}</div>
+          <div className="flex justify-center mb-8">
+            <div className="bg-gradient-to-br from-highlight-gold to-amber-600 rounded-xl p-10 text-white text-center shadow-lg max-w-sm">
+              <div className="text-sm font-medium opacity-95 mb-3 font-corporate uppercase tracking-wide">Annual Cost</div>
+              <div className="text-4xl lg:text-5xl font-bold font-corporate">${calculations.annual.toLocaleString()}</div>
             </div>
           </div>
           
-          <div className="mt-8 p-4 bg-highlight-gold/10 rounded-lg text-center">
-            <p className="text-sm text-primary-dark">
-              <i className="fas fa-lightbulb text-highlight-gold mr-2"></i>
-              Our $3,500 investment pays for itself in just <span className="font-bold">{calculations.paybackWeeks} weeks</span>!
+          <div className="text-center p-6 bg-highlight-gold/10 rounded-lg border border-highlight-gold/20">
+            <p className="text-primary-dark font-corporate">
+              <span className="font-semibold">Investment payback period: </span>
+              <span className="font-bold text-highlight-gold">{calculations.paybackWeeks} weeks</span>
             </p>
           </div>
         </div>
