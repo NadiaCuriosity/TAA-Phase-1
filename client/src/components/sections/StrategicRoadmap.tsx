@@ -57,11 +57,11 @@ export default function StrategicRoadmap() {
                 <div className="text-2xl font-bold mb-3 font-corporate text-[fff]">
                   Phase {phase.number}:
                 </div>
-                <div className={`text-lg font-semibold font-corporate ${phase.isCurrent ? 'text-white' : 'text-accent-green'}`}>
+                <div className="text-lg font-semibold font-corporate text-[#bf8e29]">
                   {phase.title}
                 </div>
               </div>
-              <div className={`text-sm mb-6 leading-relaxed font-corporate ${phase.isCurrent ? 'text-white opacity-95' : 'text-primary-dark'}`}>
+              <div className="text-sm mb-6 leading-relaxed font-corporate text-[fff]">
                 {phase.description}
               </div>
               <div className={`mt-auto pt-4 ${phase.isCurrent ? 'border-t border-white/20' : 'border-t border-primary-dark/10'}`}>
