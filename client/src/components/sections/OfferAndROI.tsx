@@ -60,35 +60,35 @@ export default function OfferAndROI() {
         </div>
         
         {/* ROI Timeline */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h3 className="text-2xl font-semibold text-center text-primary-dark mb-8">Your ROI Timeline</h3>
+        <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+          <h3 className="text-3xl font-bold text-center text-accent-green mb-10 font-corporate">Investment Return Timeline</h3>
           
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 timeline-connector rounded-full transform -translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-2 bg-gradient-to-r from-primary-dark via-accent-green to-highlight-gold rounded-full transform -translate-y-1/2"></div>
             
             {/* Timeline Points */}
             <div className="grid md:grid-cols-3 gap-8 relative z-10">
               {timelinePoints.map((point, index) => (
                 <div key={index} className="text-center">
-                  <div className={`w-16 h-16 ${point.bgColor} rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4`}>
-                    {point.day === "∞" ? <i className="fas fa-infinity"></i> : point.day}
+                  <div className={`w-20 h-20 ${point.bgColor} rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6 shadow-lg border-4 border-white`}>
+                    {point.day === "∞" ? "∞" : point.day}
                   </div>
-                  <div className={`${point.bgColor.includes('primary') ? 'bg-primary-dark/5' : point.bgColor.includes('accent') ? 'bg-accent-green/5' : 'bg-highlight-gold/5'} rounded-lg p-4`}>
-                    <div className={`font-semibold ${point.textColor === 'text-accent-green' && point.title === 'BREAKEVEN POINT' ? 'text-accent-green text-lg' : point.textColor === 'text-highlight-gold' ? 'text-highlight-gold' : 'text-primary-dark'}`}>
+                  <div className="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className={`font-bold text-sm uppercase tracking-wide mb-3 font-corporate ${point.textColor === 'text-accent-green' && point.title === 'BREAKEVEN POINT' ? 'text-accent-green' : point.textColor === 'text-highlight-gold' ? 'text-highlight-gold' : 'text-primary-dark'}`}>
                       {point.title}
                     </div>
-                    <div className={`text-2xl font-bold ${point.textColor}`}>{point.amount}</div>
-                    <div className="text-sm text-primary-dark/70 mt-2">{point.description}</div>
+                    <div className={`text-3xl font-bold font-corporate mb-2 ${point.textColor}`}>{point.amount}</div>
+                    <div className="text-sm text-primary-dark font-corporate leading-relaxed">{point.description}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="mt-8 text-center p-4 bg-accent-green/10 rounded-lg">
-            <p className="text-primary-dark font-semibold">
-              In less than 2 months, the initial investment is 100% repaid.
+          <div className="mt-10 text-center p-6 bg-gradient-to-r from-accent-green/5 to-highlight-gold/5 rounded-xl border border-accent-green/20">
+            <p className="text-primary-dark font-bold text-lg font-corporate">
+              Investment fully recovered within 8 weeks with immediate productivity gains.
             </p>
           </div>
         </div>
