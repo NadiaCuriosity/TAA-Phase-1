@@ -9,6 +9,22 @@ import StrategicRoadmap from '../components/sections/StrategicRoadmap';
 import logoPath from '@assets/1_1753326712954.png';
 
 export default function Dashboard() {
+  useEffect(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Poppins, sans-serif',
+        fontSize: '14px',
+        primaryColor: '#F7F9F9',
+        primaryTextColor: '#06414F',
+        primaryBorderColor: '#06414F',
+        lineColor: '#06414F',
+        secondaryColor: '#145B51',
+        tertiaryColor: '#BF8E29'
+      }
+    });
+  }, []);
 
   return (
     <div className="font-poppins bg-background-light text-primary-dark">

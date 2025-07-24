@@ -1,56 +1,4 @@
-import { useEffect, useRef } from "react";
-import mermaid from "mermaid";
-
 export default function FutureWorkflow() {
-  const futureContainerRef = useRef<HTMLDivElement>(null);
-
-  const diagram = `
-    flowchart TD
-      A[Record Voice Note in Slack] --> B[Automated Processing]
-      B --> C[Tasks Created in Scoro]
-      
-      %% Styling
-      classDef action fill:#145b51,stroke:#145b51,color:#ffffff;
-      classDef system fill:#f7f9f9,stroke:#06414f,stroke-width:2px;
-      class A action;
-      class B,C system;
-  `;
-
-  useEffect(() => {
-    if (!futureContainerRef.current) return;
-    
-    const renderDiagram = async () => {
-      try {
-        mermaid.initialize({ 
-          startOnLoad: false,
-          theme: 'base',
-          themeVariables: {
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '14px',
-            primaryColor: '#F7F9F9',
-            primaryTextColor: '#06414F',
-            primaryBorderColor: '#06414F',
-            lineColor: '#06414F',
-            secondaryColor: '#145B51',
-            tertiaryColor: '#BF8E29'
-          }
-        });
-        
-        const { svg } = await mermaid.render("future-workflow", diagram);
-        if (futureContainerRef.current) {
-          futureContainerRef.current.innerHTML = svg;
-        }
-      } catch (error) {
-        console.error('Future workflow diagram error:', error);
-        // Fallback: show a simple text version
-        if (futureContainerRef.current) {
-          futureContainerRef.current.innerHTML = '<p class="text-center text-gray-500">Workflow diagram loading...</p>';
-        }
-      }
-    };
-
-    renderDiagram();
-  }, [diagram]);
 
   const staysTheSame = [
     {
@@ -115,10 +63,18 @@ export default function FutureWorkflow() {
               The New Frictionless Step
             </h3>
             
-            <div
-              ref={futureContainerRef}
-              className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6"
-            />
+            <div className="bg-gradient-to-br from-accent-green/5 to-highlight-gold/5 rounded-xl p-6">
+              <div className="mermaid">
+{`flowchart TD
+    A[Record Voice Note in Slack] --> B[Automated Processing]
+    B --> C[Tasks Created in Scoro]
+    
+    classDef action fill:#145b51,stroke:#145b51,color:#ffffff
+    classDef system fill:#f7f9f9,stroke:#06414f,stroke-width:2px
+    class A action
+    class B,C system`}
+              </div>
+            </div>
             
             <div className="space-y-3 text-sm text-primary-dark/70">
               {improvements.map((improvement, index) => (
