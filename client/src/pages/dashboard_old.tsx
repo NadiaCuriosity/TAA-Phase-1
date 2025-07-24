@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
-import mermaid from 'mermaid';
-import Navigation from '../components/Navigation';
-import CurrentWorkflow from '../components/sections/CurrentWorkflow';
-import CostCalculator from '../components/sections/CostCalculator';
-import FutureWorkflow from '../components/sections/FutureWorkflow';
-import OfferAndROI from '../components/sections/OfferAndROI';
-import StrategicRoadmap from '../components/sections/StrategicRoadmap';
+import { useEffect } from "react";
+import mermaid from "mermaid";
+import Navigation from "@/components/Navigation";
+import CurrentWorkflow from "@/components/sections/CurrentWorkflow";
+import CostCalculator from "@/components/sections/CostCalculator";
+import FutureWorkflow from "@/components/sections/FutureWorkflow";
+import OfferAndROI from "@/components/sections/OfferAndROI";
+import StrategicRoadmap from "@/components/sections/StrategicRoadmap";
 
 export default function Dashboard() {
   useEffect(() => {
+    // Initialize Mermaid after component mounts
     mermaid.initialize({
       startOnLoad: true,
       theme: 'base',
@@ -39,10 +40,9 @@ export default function Dashboard() {
               AI Optimisation Proposal
             </h1>
             <p className="text-xl lg:text-2xl font-light text-primary-dark/80 mb-6 max-w-3xl mx-auto">
-              We'll build a reliable, frictionless system that tracks work without extra admin.
-            </p>
-            <p className="text-xl lg:text-2xl font-semibold text-highlight-gold mb-8 max-w-3xl mx-auto">
-              Save $2400+ month on low value work
+               We'll build a reliable, frictionless system that tracks work without extra admin. Stop tasks falling through the cracks, leverage the project management system you’re paying for, and gain visibility into what’s happening across the business
+            
+
             </p>
             <div className="flex justify-center space-x-4">
               <div className="bg-white rounded-lg px-6 py-3 shadow-lg">
