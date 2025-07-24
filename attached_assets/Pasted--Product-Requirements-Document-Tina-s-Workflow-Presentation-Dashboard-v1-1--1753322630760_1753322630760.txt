@@ -1,0 +1,123 @@
+***
+
+### **Product Requirements Document: Tina's Workflow Presentation Dashboard (v1.1)**
+
+-   **Version:** 1.1 (Verified against Replit best practices)
+-   **Author:** You
+-   **Date:** 23 May 2024
+-   **Status:** Ready for Development
+
+### **1. Overview**
+
+This document outlines the requirements for a single-page, interactive web-based dashboard. The purpose of this dashboard is to serve as a visual aid for presenting a workflow automation proposal to a client, Tina. The dashboard will be built on Replit and must adhere to the specified design guidelines and technical best practices.
+
+### **2. Project Goal & Objective**
+
+-   **Goal:** To secure a $3,500 NZD investment from the client for Phase 1 of a workflow automation project.
+-   **Objective:** To create a compelling, visually clear presentation that walks the client through the current problems, the proposed solution, the costs, and the future vision. The dashboard must be intuitive for a non-technical user to understand.
+
+### **3. Technical Best Practices (Replit Platform)**
+
+This project should adhere to the following best practices for a clean and maintainable Replit application:
+
+-   **Project Structure:** Organise the code with a clear folder hierarchy:
+    -   `/index.html` (The main HTML file)
+    -   `/css/style.css` (All CSS styles)
+    -   `/js/main.js` (Main script for initialisation)
+    -   `/js/components/` (Folder for individual JavaScript modules for each dashboard section)
+    -   `/assets/` (For any images or icons, if needed)
+-   **Modularity:** Each of the five visualisations should be treated as a self-contained component. The JavaScript for each (e.g., the calculator logic, the diagram rendering) should be in its own file within `/js/components/` and imported into `main.js`. This improves maintainability.
+-   **Responsiveness:** The dashboard must be fully responsive and provide an excellent user experience on desktop, tablet, and mobile devices. Use CSS media queries and flexible layouts (Flexbox/Grid) to ensure all visualisations are readable and functional on any screen size.
+-   **Security:** As the application is purely client-side, there are no immediate secret keys to manage. However, if any API integrations are added in the future, use **Replit Secrets** to store API keys and other credentials securely. Do not hard-code them in the client-side JavaScript.
+-   **Mermaid.js Initialisation:** Ensure the `mermaid.initialize()` or `mermaid.run()` function is called only after the DOM is fully loaded to prevent diagrams from failing to render.
+
+### **4. General Design & Styling Guidelines**
+
+-   **Font:** **Poppins** (imported from Google Fonts). Use a variety of weights for hierarchy.
+-   **Colour Palette:**
+    -   **Primary Dark:** `#06414F` (For body text, backgrounds)
+    -   **Accent Green:** `#145B51` (For headings, positive highlights)
+    -   **Highlight Gold:** `#BF8E29` (For key numbers, calls-to-action)
+    -   **Background Light:** `#F7F9F9` (For the main page background)
+    -   **White:** `#FFFFFF` (For text on dark backgrounds)
+
+### **5. Detailed Feature Requirements**
+
+*(These remain the same as your excellent original spec, with the component names now mapping to the recommended file structure.)*
+
+#### **Visualisation 1: The Current Workflow (Vertical Map)**
+
+-   **Component:** `CurrentWorkflowDiagram.js`
+-   **Description:** A vertical flowchart illustrating the client's current, inefficient workflow, clearly identifying pain points.
+-   **Mermaid.js Code:**
+
+```mermaid
+    graph TD
+        classDef normal fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
+        classDef pain fill:#fff,stroke:#BF8E29,stroke-width:4px,color:#06414F
+
+        A["Client WIP Meeting"] --> B["Meeting Recording"];
+        B --> C["Chat GPT Action Extraction"];
+        C --> D(Manual Correction<br/><b>PAIN POINT</b><br/>15-30 min/meeting);
+        D --> E["Action List Created"];
+        E --> F["Send to Client"];
+        E --> G["Create Tasks in Scoro"];
+        G --> H(Entry Bottleneck<br/><b>PAIN POINT</b><br/>Admin > Task Time);
+        H --> I["Task Size Classification"];
+        I --> J(Micro Tasks Missed<br/><b>PAIN POINT</b>);
+        I --> K["Standard Tasks Entered"];
+        K --> L(Verbal Planning<br/><b>PAIN POINT</b><br/>No Central View);
+        L --> M["Manual Scoro Update"];
+        M --> N(Progress Tracking<br/><b>PAIN POINT</b><br/>Knowledge in Notebooks);
+
+        class D,H,J,L,N pain;
+        class A,B,C,E,F,G,I,K,M normal;
+```
+
+#### **Visualisation 2: The Hidden Cost of Inaction (Interactive Calculator)**
+
+-   **Component:** `CostCalculator.js`
+-   **Description:** An interactive tool that allows the client to input numbers to see the financial cost of inaction.
+-   **Requirements:**
+    -   **Input 1:** Editable number input for "Team's Weekly Admin Hours" (Default: 12).
+    -   **Input 2:** Editable number input for "Average Hourly Rate ($NZD)" (Default: 50).
+    -   **Outputs:** Real-time updated fields for Weekly, Monthly, and Annual Cost.
+    -   The "Annual Cost" output must be large and use the `Highlight Gold` (`#BF8E29`) colour.
+
+#### **Visualisation 3: The Future Workflow (Frictionless & Fast)**
+
+-   **Component:** `FutureWorkflowDiagram.js`
+-   **Description:** A diagram contrasting the old way with the new, simplified workflow.
+-   **Requirements:**
+    -   **Section A: "What Stays the Same"**: List with icons (Meeting Process, Meeting Summaries, Scoro as truth).
+    -   **Section B: "The New Frictionless Step"**: A clean Mermaid.js diagram.
+-   **Mermaid.js Code:**
+
+```mermaid
+     graph TD
+        classDef action fill:#145B51,stroke:#145B51,color:#fff
+        classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
+
+        A["Record a Quick Voice Note in Slack"] --> B["AI Automation Magic"];
+        B --> C["Tasks Instantly Created in Scoro"];
+
+        class A action;
+        class B,C system;
+```
+
+#### **Visualisation 4: Your Foundational Partner Offer & Rapid ROI**
+
+-   **Component:** `OfferAndROI.js`
+-   **Description:** A clear visual of the special offer and the ROI timeline.
+-   **Requirements:**
+    -   Side-by-side cards: "$5,000" (strikethrough) vs. "$3,500" (highlighted).
+    -   Horizontal timeline graphic showing: "Day 1: Invest $3.5k", "**Week 6: Breakeven Point**", and "Ongoing: **Saving $2,400+/month**" (in `Accent Green`).
+
+#### **Visualisation 5: Our Strategic Roadmap**
+
+-   **Component:** `StrategicRoadmap.js`
+-   **Description:** A high-level roadmap showing the project's future.
+-   **Requirements:**
+    -   A horizontal timeline with four phases.
+    -   Phase 1 should be visually highlighted as the current focus.
+    -   **Phases:** 1. Foundational Automation, 2. Meeting Summary Automation, 3. End-to-End Integration, 4. Advanced Optimisation.
