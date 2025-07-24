@@ -36,8 +36,7 @@ export default function Dashboard() {
         <section className="gradient-bg py-16 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-primary-dark mb-6">
-              Workflow Automation
-              <span className="text-accent-green"> Investment Proposal</span>
+              TAA - Phase 1 AI Optimisation Proposal
             </h1>
             <p className="text-xl lg:text-2xl font-light text-primary-dark/80 mb-8 max-w-3xl mx-auto">
               Transform your workflow inefficiencies into streamlined automation. 
