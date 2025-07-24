@@ -56,41 +56,7 @@ export default function Dashboard() {
         <OfferAndROI />
         <StrategicRoadmap />
 
-        {/* Call to Action Footer */}
-        <footer className="bg-primary-dark py-16 px-6">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6">Ready to Transform Your Workflow?</h2>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Join us as a foundational partner and start saving $2,400+ every month. 
-              The $3,500 investment pays for itself in just 6 weeks.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-highlight-gold">$3,500</div>
-                <div className="text-sm opacity-80">One-time Investment</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-highlight-gold">6 Weeks</div>
-                <div className="text-sm opacity-80">To Breakeven</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-highlight-gold">$28,800+</div>
-                <div className="text-sm opacity-80">Annual Savings</div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <button className="bg-highlight-gold hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105">
-                <i className="fas fa-handshake mr-2"></i>
-                Let's Start Phase 1
-              </button>
-              <p className="text-sm opacity-70 mt-4">
-                Questions? Let's discuss how this fits your specific needs.
-              </p>
-            </div>
-          </div>
-        </footer>
+
       </main>
     </div>
   );
