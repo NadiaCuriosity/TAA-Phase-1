@@ -4,23 +4,23 @@ export default function OfferAndROI() {
       day: "Day 1",
       title: "Initial Investment",
       amount: "$3,500",
-      description: "Project kickoff and setup",
+      description: "Initial Investment",
       bgColor: "bg-primary-dark",
       textColor: "text-highlight-gold"
     },
     {
-      day: "Week 6",
-      title: "BREAKEVEN POINT",
+      day: "Week 8",
+      title: "Breakeven Point", 
       amount: "$0 Net Cost",
-      description: "Savings cover investment",
+      description: "Net Cost",
       bgColor: "bg-accent-green pulse-gold",
       textColor: "text-accent-green"
     },
     {
       day: "∞",
-      title: "Ongoing Savings",
+      title: "Time Savings",
       amount: "$2,400+/month",
-      description: "Pure profit every month",
+      description: "Time Savings",
       bgColor: "bg-highlight-gold",
       textColor: "text-accent-green"
     }
@@ -39,28 +39,22 @@ export default function OfferAndROI() {
         
         {/* Pricing Comparison */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center relative opacity-75">
-            <div className="absolute top-4 right-4 bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
-              Standard Rate
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center relative">
+            <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-semibold">
+              Discounted
             </div>
-            <div className="text-4xl font-bold text-primary-dark mb-2 line-through">$5,000</div>
-            <div className="text-lg text-primary-dark/70">Regular Investment</div>
-            <div className="mt-6 text-sm text-primary-dark/60">
-              Our standard rate for workflow automation projects
-            </div>
+            <div className="text-4xl font-bold text-primary-dark mb-2">$5,000</div>
+            <div className="text-lg text-primary-dark/70">Standard Investment</div>
           </div>
           
-          <div className="bg-gradient-to-br from-accent-green to-primary-dark rounded-2xl shadow-xl p-8 text-center text-white relative transform scale-105">
-            <div className="absolute top-4 right-4 bg-highlight-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
-              Partner Rate
+          <div className="bg-gradient-to-br from-highlight-gold to-yellow-600 rounded-2xl shadow-xl p-8 text-center text-white relative transform scale-105">
+            <div className="absolute top-4 right-4 bg-white text-highlight-gold px-3 py-1 rounded-full text-sm font-semibold">
+              Your Price
             </div>
             <div className="text-5xl font-bold mb-2">$3,500</div>
             <div className="text-lg opacity-90">Foundational Partner Investment</div>
-            <div className="mt-6 text-sm opacity-80">
-              30% discount for being our foundational partner
-            </div>
-            <div className="mt-4 bg-white/20 rounded-lg p-3">
-              <div className="text-highlight-gold font-semibold">You Save: $1,500</div>
+            <div className="mt-6 text-sm opacity-90">
+              + AI service subscription
             </div>
           </div>
         </div>
@@ -93,10 +87,8 @@ export default function OfferAndROI() {
           </div>
           
           <div className="mt-8 text-center p-4 bg-accent-green/10 rounded-lg">
-            <p className="text-primary-dark">
-              <i className="fas fa-chart-line text-accent-green mr-2"></i>
-              <span className="font-semibold">12-month ROI:</span> 
-              <span className="text-2xl font-bold text-highlight-gold"> 685%</span>
+            <p className="text-primary-dark font-semibold">
+              In less than 2 months, the initial investment is 100% repaid.
             </p>
           </div>
         </div>

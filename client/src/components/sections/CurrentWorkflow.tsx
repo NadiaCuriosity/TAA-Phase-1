@@ -11,7 +11,7 @@ export default function CurrentWorkflow() {
 
   const painPoints = [
     "Manual correction taking 15-30 minutes per meeting",
-    "Entry bottleneck where admin time exceeds task time",
+    "Entry bottleneck where admin time exceeds task time", 
     "Micro tasks being missed in the workflow",
     "Verbal planning with no central view",
     "Progress tracking knowledge trapped in notebooks"
@@ -31,9 +31,8 @@ export default function CurrentWorkflow() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <div className="bg-background-light rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-primary-dark mb-4 flex items-center">
-                <i className="fas fa-exclamation-triangle text-highlight-gold mr-3"></i>
-                Identified Pain Points
+              <h3 className="text-xl font-semibold text-primary-dark mb-4">
+                Key Bottleneck Points
               </h3>
               <ul className="space-y-3">
                 {painPoints.map((point, index) => (

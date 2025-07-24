@@ -12,8 +12,8 @@ export default function CostCalculator() {
 
   useEffect(() => {
     const weeklyCost = adminHours * hourlyRate;
-    const monthlyCost = weeklyCost * 4;
-    const annualCost = monthlyCost * 12;
+    const annualCost = weeklyCost * 52;
+    const monthlyCost = annualCost / 12;
     const paybackWeeks = Math.ceil(3500 / weeklyCost);
 
     setCalculations({
@@ -62,18 +62,8 @@ export default function CostCalculator() {
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-primary-dark to-accent-green rounded-xl p-6 text-white text-center">
-              <div className="text-sm font-medium opacity-80 mb-2">Weekly Cost</div>
-              <div className="text-2xl font-bold">${calculations.weekly.toLocaleString()}</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-accent-green to-primary-dark rounded-xl p-6 text-white text-center">
-              <div className="text-sm font-medium opacity-80 mb-2">Monthly Cost</div>
-              <div className="text-2xl font-bold">${calculations.monthly.toLocaleString()}</div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-highlight-gold to-yellow-600 rounded-xl p-8 text-white text-center pulse-gold">
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-br from-highlight-gold to-yellow-600 rounded-xl p-8 text-white text-center pulse-gold max-w-xs">
               <div className="text-sm font-medium opacity-90 mb-2">Annual Cost</div>
               <div className="text-3xl lg:text-4xl font-bold">${calculations.annual.toLocaleString()}</div>
             </div>

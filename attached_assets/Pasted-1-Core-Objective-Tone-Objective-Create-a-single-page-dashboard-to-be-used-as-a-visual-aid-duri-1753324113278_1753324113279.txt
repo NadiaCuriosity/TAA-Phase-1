@@ -1,0 +1,75 @@
+1. Core Objective & Tone
+  Objective: Create a single-page dashboard to be used as a visual aid during a live presentation for a client named Tina.
+  Tone: Professional, clear, and direct. This is a business proposal tool, not a public-facing website. Avoid overly casual or "salesy" language (e.g., "AI Magic"). The language should be clean and corporate.
+2. General Styling
+  Font: Poppins
+  Colour Palette:
+  Accent Green: #145B51
+  Primary Dark: #06414F
+  Highlight Gold: #BF8E29
+  Layout: The developer must build a single-page application that closely mirrors the layout and component spacing of the provided mockup image.
+3. Feature Requirements 
+Visualisation 1: The Current Workflow
+  Task: Recreate the "The Current Workflow" section from the mockup.
+  Left Panel: A bulleted list titled "Key Bottleneck Points". Use the gold circle icons from the mockup. The text for these points should be taken directly from the context documents.
+  Right Panel (Diagram):
+  Render the vertical flowchart using Mermaid.js.
+  Crucially, style the nodes to match the mockup:
+  Standard nodes: White fill, thin dark border (#06414F).
+  Pain Point nodes: White fill, thick gold border (#BF8E29).
+  Use the Mermaid code provided in the previous PRD, but ensure the final visual output matches the mockup.
+Visualisation 2: The Hidden Cost of Inaction
+  Task: Build the interactive calculator as seen in the mockup.
+  Functionality:
+  Two input fields: "Weekly Admin Hours" (default 12) and "Average Hourly Rate ($NZD)" (default 50).
+  One output field: "Annual Cost".
+  The "Annual Cost" must update in real-time based on the formula: (Weekly Hours * Hourly Rate) * 52.
+  Styling: Match the clean, minimalist design of the form in the mockup.
+Visualisation 3: The Future Workflow
+  Task: Recreate the "The Future Workflow" section from the mockup.
+  Left Panel ("What Stays the Same"): Use the exact text and layout from the mockup.
+  Right Panel ("The New Frictionless Step"):
+  Use Mermaid.js to create the three-step diagram.
+  The top node should be styled in the Accent Green (#145B51) as shown.
+  The text in the nodes should be updated to sound more professional. Use this Mermaid code:
+     graph TD
+        classDef action fill:#145B51,stroke:#145B51,color:#fff
+        classDef system fill:#fff,stroke:#06414F,stroke-width:2px,color:#06414F
+
+        A["Record Voice Note in Slack"] --> B["Automated Processing"];
+        B --> C["Tasks Created in Scoro"];
+
+        class A action;
+        class B,C system;
+  Include the bullet points below the diagram exactly as shown in the mockup.
+Visualisation 4: Your Foundational Partner Offer & ROI
+  Task: Recreate the offer and ROI section precisely as shown in the mockup. This corrects my previous version.
+  Offer Cards:
+  Left Card: Display "$5,000" with a "Discounted" tag above it.
+  Right Card: Display "$3,500" with a "Your Price" tag above it. This card should be highlighted with the gold colour.
+  ROI Timeline:
+  Create the three-point timeline graphic.
+  Point 1: "$3,500 Initial Investment"
+  Point 2: "$0 Net Cost"
+  Point 3: "$2,400+/month Time Savings"
+  Underneath the timeline, add the text: "In less than 2 months, the initial investment is 100% repaid."
+  Ongoing Costs (New Requirement):
+  Beneath the "$3,500 Your Price" card, add a small, clear text line: + AI service subscription. This is critical for transparency.
+Visualisation 5: Our Strategic Roadmap
+  Task: Recreate the roadmap section with the correct 3-phase structure.
+  Layout: Use three distinct cards as shown in the mockup for the phases.
+  Content:
+  Phase 1 Card (Highlighted in Gold):
+  Title: Phase 1: Voice Note to Scoro Tasks
+  Status: Today's Focus
+  Description: Automate task creation from voice notes to eliminate the primary data entry bottleneck.
+  Investment: $3,500 NZD
+  Phase 2 Card:
+  Title: Phase 2: Complete Meeting Automation
+  Status: Future Vision
+  Description: Automate the creation of client-ready meeting summaries and Scoro tasks directly from transcripts.
+  Phase 3 Card:
+  Title: Phase 3: Creative Brief Automation
+  Status: Future Vision
+  Description: Streamline the creative briefing process, turning client conversations or notes into structured briefs automatically.
+  Remove the total savings calculation at the bottom. Keep the roadmap focused on the phases themselves. The ROI is already covered in the previous section.
