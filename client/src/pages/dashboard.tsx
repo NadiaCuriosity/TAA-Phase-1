@@ -46,16 +46,7 @@ export default function Dashboard() {
                 Save $2400+ month on low value work
               </p>
             </div>
-            <div className="flex justify-center space-x-4">
-              <div className="bg-white rounded-lg px-6 py-3 shadow-lg">
-                <span className="text-sm text-primary-dark/60">Investment Required</span>
-                <div className="text-2xl font-bold text-highlight-gold">$3,500 NZD</div>
-              </div>
-              <div className="bg-white rounded-lg px-6 py-3 shadow-lg">
-                <span className="text-sm text-primary-dark/60">ROI Timeline</span>
-                <div className="text-2xl font-bold text-accent-green">6 Weeks</div>
-              </div>
-            </div>
+
           </div>
         </section>
 
