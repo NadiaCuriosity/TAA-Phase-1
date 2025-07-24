@@ -56,6 +56,14 @@ export default function Dashboard() {
         <OfferAndROI />
         <StrategicRoadmap />
 
+        {/* Bottom Summary Section */}
+        <section className="py-16 px-6 bg-gradient-to-r from-accent-green/5 to-highlight-gold/5 border-t border-gray-100">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl lg:text-2xl font-light text-primary-dark leading-relaxed font-corporate">
+              This phase creates a system that captures and tracks work seamlessly... no extra admin, no dropped tasks, and proper utilisation of the tools you're already investing in. Most importantly, it establishes visibility across your business and sets the habits that supports everything that follows.
+            </p>
+          </div>
+        </section>
 
       </main>
     </div>
